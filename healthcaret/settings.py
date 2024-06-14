@@ -73,7 +73,7 @@ DATABASES = {
         'NAME': env('POSTGRES_DB', default='health'),
         'USER': env('POSTGRES_USER', default='postgres'),
         'PASSWORD': env('POSTGRES_PASSWORD', default='12345'),
-        'HOST': env('POSTGRES_HOST', default='db'),
+        'HOST': env('POSTGRES_HOST', default='localhost'),
         'PORT': env('POSTGRES_PORT', default='5432'),
     }
 }
@@ -134,6 +134,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = env('EMAIL_HOST_USER', default='your-email@example.com')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='your-email-password')
-DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='your-email@example.com')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER', default='srithcu@gmail.com')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='rbmk bxfj hrxj fpsq')
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='srithcu@gmail.com')
