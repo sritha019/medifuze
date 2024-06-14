@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: healthcaret-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: healthcaret
+  template:
+    metadata:
+      labels:
+        app: healthcaret
+    spec:
+      containers:
+      - name: healthcaret
+        image: us.icr.io/your-namespace/healthcaret-app:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: POSTGRES_DB
+          value: "health"
+        - name: POSTGRES_USER
+          value: "postgres"
+        - name: POSTGRES_PASSWORD
+          value: "12345"
+        - name: POSTGRES_HOST
+          value: "db"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: healthcaret-service
+spec:
+  selector:
+    app: healthcaret
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+  type: LoadBalancer

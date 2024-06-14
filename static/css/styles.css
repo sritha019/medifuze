@@ -1,0 +1,86 @@
+body {
+    background: url("../images/bg.jpg") no-repeat center center fixed;
+    background-size: cover; /* Ensures the background image covers the entire screen */
+    font-family: Arial, sans-serif;
+    color: white; /* Ensure text is readable on the background */
+}
+
+.top-bar {
+    background-color: rgba(203, 213, 240, 0.8); /* Transparent background color */
+    color: #194592; /* Updated text color */
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar i {
+    margin-right: 5px;
+}
+
+.navbar {
+    background-color: rgba(203, 213, 240, 0.8); /* Transparent background color */
+    border-bottom: 1px solid #dddddd;
+}
+
+.navbar .nav-link {
+    color: #194592;
+    padding: 10px 15px;
+}
+
+.navbar .nav-link:hover {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.header {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.header p {
+    font-size: 1.5rem;
+}
+
+.header .btn-primary {
+    background-color: #4e3d9a;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 30px;
+    margin: 10px;
+}
+
+.header .btn-primary:hover {
+    background-color: #6e59c1;
+}
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+
+.marquee p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

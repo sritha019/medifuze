@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Download Reports{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Your Reports</h1>
+    <div class="table-responsive mt-4">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Report Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for report in reports %}
+                <tr>
+                    <td>{{ report.file.name }}</td>
+                    <td><a href="{{ report.file.url }}" download class="btn btn-success">Download</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

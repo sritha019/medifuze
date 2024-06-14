@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Appointment Booking Success{% endblock %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+    <h1>Appointment Booking Successful</h1>
+    <p class="mt-4">You have successfully booked an appointment with {{ appointment.doctor.name }}.</p>
+</div>
+{% endblock %}

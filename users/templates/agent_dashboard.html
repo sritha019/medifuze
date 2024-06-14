@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Agent Dashboard{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Agent Dashboard</h1>
+    <div class="table-container">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Address</th>
+                    <th>Date of Booking</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for appointment in appointments %}
+                <tr>
+                    <td>{{ appointment.user.first_name }} {{ appointment.user.last_name }}</td>
+                    <td>{{ appointment.user.address }}</td>
+                    <td>{{ appointment.date_booked }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

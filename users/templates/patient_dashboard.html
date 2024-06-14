@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Patient Dashboard{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Welcome to your Dashboard, {{ request.user.first_name }}</h1>
+    <div class="d-flex justify-content-around mt-4">
+        <a href="{% url 'book_test' %}" class="btn btn-success btn-lg">Book Test</a>
+        <a href="{% url 'book_appointment' %}" class="btn btn-info btn-lg">Book Doctor Appointment</a>
+        <a href="{% url 'download_report' %}" class="btn btn-warning btn-lg">Download Report</a>
+    </div>
+</div>
+{% endblock %}

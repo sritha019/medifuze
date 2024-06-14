@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Doctor Dashboard{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Upload Prescription</h2>
+    <form method="post" enctype="multipart/form-data" class="mt-4">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="file" name="prescription" class="form-control-file">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Upload</button>
+    </form>
+    {% if uploaded_file_url %}
+    <div class="alert alert-success mt-4">
+        File uploaded successfully: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Book a Test{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Book a Test</h1>
+    {% for category in categories %}
+    <div class="category mt-4">
+        <h2>{{ category.name }}</h2>
+        {% for test in category.test_set.all %}
+        <div class="test d-flex justify-content-between align-items-center mt-2">
+            <span>{{ test.name }} - {{ test.price }} CZK</span>
+            <form method="post" style="display:inline;">
+                {% csrf_token %}
+                <input type="hidden" name="test_id" value="{{ test.id }}">
+                <button type="submit" class="btn btn-primary">Book Test</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
