@@ -1,0 +1,6 @@
+applications:
+  - name: healthcaret
+    random-route: true
+    memory: 256M
+    buildpacks:
+      - python_buildpack
