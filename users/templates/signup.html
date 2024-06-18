@@ -3,11 +3,11 @@
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
+<div style="color: darkblue" class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="form-container">
-                <h2 class="text-center">Sign Up</h2>
+                <h2 style="color: darkblue" class="text-center">Sign Up</h2>
                 <form method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
